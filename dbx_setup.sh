@@ -21,4 +21,4 @@ git clone https://github.com/Dosk3n/dbox.git /srv/dbox/git/
 
 # Set execution on scripts
 chmod +x /srv/dbox/git/dbx.py
-chmod +x /srv/dbox/git/install.sh
+chmod +x /srv/dbox/git/dbx_install.sh
