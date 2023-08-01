@@ -1,6 +1,6 @@
 #!/bin/bash
 #########################################################################
-# Title:         dBox Setup Script                                    #
+# Title:         dBox Base Install Script                               #
 # Author(s):     Dosk3n                                                 #
 # URL:           https://github.com/dosk3n/dbox                         #
 # --                                                                    #
@@ -16,9 +16,21 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-# Clone the repo
-git clone https://github.com/Dosk3n/dbox.git /srv/dbox/git/
+mkdir ~/dbox/
 
-# Set execution on scripts
-chmod +x /srv/dbox/git/dbx.py
-chmod +x /srv/dbox/git/install.sh
+mkdir ~/dbox/Backups/
+
+mkdir ~/dbox/downloads/
+mkdir ~/dbox/downloads/completed/
+mkdir ~/dbox/downloads/incoming/
+mkdir ~/dbox/downloads/nzbs/
+mkdir ~/dbox/downloads/torrents/
+mkdir ~/dbox/downloads/watched/
+
+mkdir ~/dbox/Media/
+mkdir ~/dbox/Media/TV/
+mkdir ~/dbox/Media/Movies/
+
+mkdir ~/dbox/transcodes/
+mkdir ~/dbox/transcodes/plex/
+mkdir ~/dbox/transcodes/plex/Transcode
