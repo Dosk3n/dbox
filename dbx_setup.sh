@@ -8,8 +8,8 @@
 #                   GNU General Public License v3.0                     #
 #########################################################################
 
-# https://raw.githubusercontent.com/Dosk3n/dbox/main/dbx_init.sh
-# curl -sL https://raw.githubusercontent.com/Dosk3n/dbox/main/dbx_init.sh | sudo -H bash && cd /srv/dbox/git
+# https://raw.githubusercontent.com/Dosk3n/dbox/main/dbx_setup.sh
+# curl -sL https://raw.githubusercontent.com/Dosk3n/dbox/main/dbx_setup.sh | sudo -H bash && cd /srv/dbox/git
 
 if [ "$EUID" -ne 0 ]; then
   echo "This script must be run with sudo or as the root user."
