@@ -14,4 +14,4 @@
 #fi
 
 # Clone the repo
-git clone https://github.com/Dosk3n/dbox.git ~/dbox/git/
+git clone https://github.com/Dosk3n/dbox.git /srv/dbox/git/
