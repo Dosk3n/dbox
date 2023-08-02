@@ -53,3 +53,6 @@ sudo groupadd docker
 sudo usermod -aG docker $USER # might need to fix this as had to run manually
 
 sudo docker network create proxy
+
+echo "Please log out and back in to apply changes. After you log in, if you are unable to run 'docker ps' without sudo, you will need to add yourself to the docker group with the following command:"
+echo "sudo usermod -aG docker \$USER"
