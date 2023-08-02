@@ -48,3 +48,17 @@ mkdir /mnt/local/dbox/transcodes/plex/
 CURRENT_USER=$(logname)  # Get the username of the current user
 chown -R $CURRENT_USER:$CURRENT_USER /mnt/local  # Change ownership recursively
 chmod -R 755 /mnt/local  # Set permissions recursively
+
+# Install the base apps: Plex, Sonarr, Radarr, Overseerr, NzbGet, rTorrent
+
+# Plex
+mkdir mkdir /mnt/local/dbox/appdata/plex
+
+# Echoing out the message to visit the website and copy the code
+echo "Please go to https://www.plex.tv/claim/ and copy the code."
+
+# Prompting the user to paste the code
+read -p "Paste the code here: " plex_code
+
+# Now the 'plex_code' variable holds the code entered by the user
+echo "You entered: $plex_code"
