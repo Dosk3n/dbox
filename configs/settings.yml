@@ -1,6 +1,6 @@
 ---
-downloads: ~/dbox/downloads 
-transcodes: ~/dbox/transcodes 
+downloads: /mnt/local/dbox/downloads 
+transcodes: /mnt/local/dbox/transcodes 
 rclone:
   version:  
   remote:  
