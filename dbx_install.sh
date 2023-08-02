@@ -44,7 +44,9 @@ sudo usermod -aG docker $USER
 
 mkdir /mnt/local/dbox/
 
-mkdir /mnt/local/dbox/Backups/
+mkdir /mnt/local/dbox/appdata
+
+mkdir /mnt/local/dbox/backups/
 
 mkdir /mnt/local/dbox/downloads/
 mkdir /mnt/local/dbox/downloads/completed/
@@ -67,7 +69,6 @@ mkdir /mnt/local/dbox/Media/XXX/
 
 mkdir /mnt/local/dbox/transcodes/
 mkdir /mnt/local/dbox/transcodes/plex/
-mkdir /mnt/local/dbox/transcodes/plex/Transcode
 
 # Set ownership and permissions for the current user
 CURRENT_USER=$(logname)  # Get the username of the current user
