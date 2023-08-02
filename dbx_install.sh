@@ -16,21 +16,40 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-mkdir ~/dbox/
+# Install required applications
 
-mkdir ~/dbox/Backups/
+sudo apt-get update
 
-mkdir ~/dbox/downloads/
-mkdir ~/dbox/downloads/completed/
-mkdir ~/dbox/downloads/incoming/
-mkdir ~/dbox/downloads/nzbs/
-mkdir ~/dbox/downloads/torrents/
-mkdir ~/dbox/downloads/watched/
+# Docker
+# Remove old pkgs
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
 
-mkdir ~/dbox/Media/
-mkdir ~/dbox/Media/TV/
-mkdir ~/dbox/Media/Movies/
 
-mkdir ~/dbox/transcodes/
-mkdir ~/dbox/transcodes/plex/
-mkdir ~/dbox/transcodes/plex/Transcode
+
+
+mkdir /mnt/local/dbox/
+
+mkdir /mnt/local/dbox/Backups/
+
+mkdir /mnt/local/dbox/downloads/
+mkdir /mnt/local/dbox/downloads/completed/
+mkdir /mnt/local/dbox/downloads/incoming/
+mkdir /mnt/local/dbox/downloads/nzbs/
+mkdir /mnt/local/dbox/downloads/torrents/
+mkdir /mnt/local/dbox/downloads/watched/
+
+mkdir /mnt/local/dbox/Media/
+mkdir /mnt/local/dbox/Media/Anime/
+mkdir /mnt/local/dbox/Media/Audiobooks/
+mkdir /mnt/local/dbox/Media/Books/
+mkdir /mnt/local/dbox/Media/Movies/
+mkdir /mnt/local/dbox/Media/Movies-4K/
+mkdir /mnt/local/dbox/Media/Music/
+mkdir /mnt/local/dbox/Media/Podcasts/
+mkdir /mnt/local/dbox/Media/TV/
+mkdir /mnt/local/dbox/Media/TV-4K/
+mkdir /mnt/local/dbox/Media/XXX/
+
+mkdir /mnt/local/dbox/transcodes/
+mkdir /mnt/local/dbox/transcodes/plex/
+mkdir /mnt/local/dbox/transcodes/plex/Transcode

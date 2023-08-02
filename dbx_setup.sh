@@ -19,6 +19,10 @@ fi
 # Clone the repo
 git clone https://github.com/Dosk3n/dbox.git /srv/dbox/git/
 
+# Set ownership and permissions for the current user
+CURRENT_USER=$(logname)  # Get the username of the current user
+chown -R $CURRENT_USER:$CURRENT_USER /srv/dbox  # Change ownership recursively
+chmod -R 755 /srv/dbox  # Set permissions recursively
+
 # Set execution on scripts
-chmod +x /srv/dbox/git/dbx.py
 chmod +x /srv/dbox/git/dbx_install.sh
