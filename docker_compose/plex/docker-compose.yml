@@ -17,8 +17,8 @@ services:
       - "32414:32414/udp"
     environment:
       - TZ=GB
-      # - PLEX_CLAIM=<claimToken>
-      - ADVERTISE_IP=http://<hostIPAddress>:32400/
+      - PLEX_CLAIM=<claimToken>
+      - ADVERTISE_IP=<AdvertiseAddress>:32400/
       - PLEX_DISABLE_SECURITY=1
       - PLEX_HWTRANSCODE=1
     hostname: DboxPlex

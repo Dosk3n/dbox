@@ -54,11 +54,22 @@ chmod -R 755 /mnt/local  # Set permissions recursively
 # Plex
 mkdir mkdir /mnt/local/dbox/appdata/plex
 
-# Echoing out the message to visit the website and copy the code
-echo "Please go to https://www.plex.tv/claim/ and copy the code."
+cp /srv/dbox/git/docker_compose/plex/docker-compose.yml /mnt/local/dbox/appdata/plex/
 
-# Prompting the user to paste the code
+
+# Echoing out the message to visit the website and copy the code
+echo "    "
+echo "Please go to https://www.plex.tv/claim/ and copy the code."
 read -p "Paste the code here: " plex_code
 
-# Now the 'plex_code' variable holds the code entered by the user
-echo "You entered: $plex_code"
+echo "    "
+echo "Please enter your advertised address. Examples: https://plex.mydomain.com, http://10.222.1.72"
+read -p "Address: " advertise_address
+
+# Escape special characters in the plex_code and advertise_address variables
+plex_code_escaped=$(printf '%s\n' "$plex_code" | sed -e 's/[\/&]/\\&/g')
+advertise_address_escaped=$(printf '%s\n' "$advertise_address" | sed -e 's/[\/&]/\\&/g')
+
+# Replace <claimToken> and <AdvertiseAddress> in docker-compose.yml
+sed -i "s/<claimToken>/$plex_code_escaped/g" /mnt/local/dbox/appdata/plex/docker-compose.yml
+sed -i "s/<AdvertiseAddress>/$advertise_address_escaped/g" /mnt/local/dbox/appdata/plex/docker-compose.yml
