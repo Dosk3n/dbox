@@ -28,6 +28,7 @@ services:
       - /mnt/local/dbox/Media:/data
       - /dev/shm:/dev/shm
       - /mnt/local/dbox/downloads:/downloads
+      - /mnt/local/dbox/appdata/scripts:/scripts
     networks:
       - proxy
     restart: unless-stopped
